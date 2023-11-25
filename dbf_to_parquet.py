@@ -26,3 +26,7 @@ def dbf_to_parquet(table, output_path):
 def dbf_to_csv(table, output_path):
     output_path = pathlib.Path(output_path+".csv")
     df.to_csv(output_path)
+
+
+if format == "csv":
+    
