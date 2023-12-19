@@ -1,8 +1,8 @@
 import streamlit as st
 import plotly.express as px
 import pandas as pd
-import os
 import warnings
+from pathlib import Path
 warnings.filterwarnings('ignore')
 
 st.set_page_config(page_title="Superstore!!!", page_icon=":bar_chart:",layout="wide")
@@ -16,8 +16,11 @@ if fl is not None:
     st.write(filename)
     df = pd.read_csv(filename, encoding = "ISO-8859-1")
 else:
-    os.chdir(r"C:\\Users\\Mostafa Hussain\\Desktop\\Streamlit")
-    df = pd.read_csv("Superstore.csv", encoding = "ISO-8859-1")
+    # detect current file directory
+    current_dir = Path(__file__).parent.absolute()
+    # build data path
+    data_path = current_dir / "data" / "Superstore.csv"
+    df = pd.read_csv(data_path, encoding = "ISO-8859-1")
 
 col1, col2 = st.columns((2))
 df["Order Date"] = pd.to_datetime(df["Order Date"])
