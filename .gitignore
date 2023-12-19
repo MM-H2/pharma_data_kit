@@ -2,3 +2,6 @@ streamenv/*
 data/*
 .DS_Store
 *.csv
+build/*
+dist/*
+hooks/*.pyc
