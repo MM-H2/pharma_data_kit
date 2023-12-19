@@ -1,1 +1,3 @@
 streamenv/*
+data/*
+.DS_Store
