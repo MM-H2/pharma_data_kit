@@ -1,3 +1,4 @@
 streamenv/*
 data/*
 .DS_Store
+*.csv
