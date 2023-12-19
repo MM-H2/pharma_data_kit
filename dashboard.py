@@ -16,9 +16,7 @@ if fl is not None:
     st.write(filename)
     df = pd.read_csv(filename, encoding = "ISO-8859-1")
 else:
-    # detect current file directory
     current_dir = Path(__file__).parent.absolute()
-    # build data path
     data_path = current_dir / "data" / "Superstore.csv"
     df = pd.read_csv(data_path, encoding = "ISO-8859-1")
 
